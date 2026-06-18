@@ -3,169 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Star Wars - O Universo Galáctico</title>
+    <title>Vídeo Incorporado</title>
     <style>
-        /* Estilização Geral (Clima Espacial) */
         body {
-            background-color: #000;
-            color: #f5f5f5;
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
         }
-
-        /* Cabeçalho */
-        header {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?q=80&w=1920');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            padding: 60px 20px;
-            border-bottom: 3px solid #ffe81f;
-        }
-
-        header h1 {
-            color: #ffe81f;
-            font-size: 3.5rem;
-            margin: 0;
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            font-family: 'Impact', sans-serif;
-        }
-
-        header p {
-            font-style: italic;
-            color: #aaa;
-            font-size: 1.2rem;
-        }
-
-        /* Container Principal */
-        .container {
-            max-width: 1000px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-
-        /* Seções */
-        section {
-            margin-bottom: 40px;
-            background: #111;
-            padding: 25px;
+        .video-container {
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            border-left: 5px solid #ffe81f;
-        }
-
-        h2 {
-            color: #ffe81f;
-            margin-top: 0;
-            font-size: 1.8rem;
-        }
-
-        /* Grid dos Lados da Força */
-        .force-sides {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        @media (max-width: 768px) {
-            .force-sides {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .jedi {
-            background: #0a192f;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #0066cc;
-        }
-
-        .jedi h3 { color: #3399ff; margin-top: 0; }
-
-        .sith {
-            background: #2a0808;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #cc0000;
-        }
-
-        .sith h3 { color: #ff3333; margin-top: 0; }
-
-        /* Lista de Filmes */
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-
-        li {
-            padding: 10px 0;
-            border-bottom: 1px solid #333;
-        }
-
-        li strong {
-            color: #ffe81f;
-        }
-
-        /* Rodapé */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: #111;
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 60px;
-            border-top: 1px solid #222;
+            overflow: hidden;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>STAR WARS</h1>
-        <p>"Há muito tempo, em uma galáxia muito, muito distante..."</p>
-    </header>
-
-    <div class="container">
-
-        <section>
-            <h2>A Saga Galáctica</h2>
-            <p>Criada pelo cineasta <strong>George Lucas</strong> em 1977, Star Wars se tornou um dos maiores fenômenos da cultura pop mundial. A franquia explora a eterna luta entre o bem e o mal, a política de uma república galáctica em colapso e a mística energia conhecida como <strong>A Força</strong>.</p>
-        </section>
-
-        <section>
-            <h2>Os Lados da Força</h2>
-            <p>"A Força é o que dá ao Jedi o seu poder. É um campo de energia criado por todas as coisas vivas. Ela nos envolve, nos penetra e mantém a galáxia unida." – Obi-Wan Kenobi</p>
-            
-            <div class="force-sides">
-                <div class="jedi">
-                    <h3>O Lado Luminoso (Jedi)</h3>
-                    <p>Focado na paz, conhecimento, serenidade e defesa. Os Jedi usam seus poderes para proteger a vida e a justiça na galáxia. Suas sabres de luz são geralmente azuis ou verdes.</p>
-                </div>
-                <div class="sith">
-                    <h3>O Lado Sombrio (Sith)</h3>
-                    <p>Alimentado por emoções intensas como raiva, medo, ódio e paixão. Os Sith buscam o poder pessoal e o controle absoluto. Seus sabres de luz são caracteristicamente vermelhos.</p>
-                </div>
-            </div>
-        </section>
-
-        <section>
-            <h2>A Trilogia Original</h2>
-            <p>Os três filmes que deram início a tudo e revolucionaram o cinema de ficção científica:</p>
-            <ul>
-                <li><strong>Episódio IV: Uma Nova Esperança</strong> (1977)</li>
-                <li><strong>Episódio V: O Império Contra-Ataca</strong> (1980)</li>
-                <li><strong>Episódio VI: O Retorno de Jedi</strong> (1983)</li>
-            </ul>
-        </section>
-
+    <div class="video-container">
+        <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/L4SdydVjaP4?si=WI2sWIBFNx5QLK8V" 
+            title="YouTube video player" 
+            frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
     </div>
-
-    <footer>
-        <p>Que a Força esteja com você! | Criado por um fã de Star Wars.</p>
-    </footer>
 
 </body>
 </html>
