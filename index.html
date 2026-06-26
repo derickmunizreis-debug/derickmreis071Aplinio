@@ -3,151 +3,316 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>O Império Sith e Seus Aliados</title>
+    <title>O Arquivo Sith: Poder e Conquista</title>
     <style>
+        :root {
+            --sith-red: #ff0033;
+            --dark-bg: #0a0a0c;
+            --panel-bg: #15161a;
+            --text-light: #e2e8f0;
+            --text-muted: #94a3b8;
+        }
+
         body {
-            background-color: #0d0d0d;
-            color: #e0e0e0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
         }
 
+        /* Navegação Fixa */
+        nav {
+            background-color: rgba(10, 10, 12, 0.95);
+            border-bottom: 2px solid var(--sith-red);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(255, 0, 51, 0.15);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 15px;
+            flex-wrap: wrap;
+        }
+
+        nav li {
+            margin: 0 15px;
+        }
+
+        nav a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--sith-red);
+        }
+
+        /* Cabeçalho */
         header {
-            background: linear-gradient(180deg, #1a0000 0%, #0d0d0d 100%);
-            border-bottom: 3px solid #ff0000;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(10, 10, 12, 1)), url('https://images.unsplash.com/photo-1506703719100-a0f3a48c0f86?auto=format&fit=crop&w=1920&q=80') center/cover;
+            padding: 140px 20px 60px 20px;
             text-align: center;
-            padding: 40px 20px;
+            border-bottom: 1px solid #222;
         }
 
         header h1 {
-            color: #ff0000;
-            font-size: 3rem;
+            color: var(--sith-red);
+            font-size: 3.5rem;
             margin: 0;
             text-transform: uppercase;
-            letter-spacing: 4px;
-            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+            letter-spacing: 6px;
+            text-shadow: 0 0 15px rgba(255, 0, 51, 0.6);
         }
 
         header p {
-            font-style: italic;
-            color: #a0a0a0;
             font-size: 1.2rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 15px auto 0 auto;
         }
 
-        main {
-            max-width: 1000px;
-            margin: 30px auto;
+        /* Container Principal */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
             padding: 0 20px;
         }
 
-        .intro {
-            background-color: #141414;
-            border-left: 5px solid #ff0000;
-            padding: 20px;
-            margin-bottom: 40px;
-            border-radius: 0 8px 8px 0;
+        /* Seções Gerais */
+        section {
+            margin-bottom: 60px;
+            scroll-margin-top: 100px; /* Evita que o menu fixo cubra o título ao navegar */
         }
 
+        h2 {
+            color: var(--sith-red);
+            font-size: 2.2rem;
+            border-bottom: 2px solid #2d3139;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Bloco de Código Sith */
+        .codigo-sith {
+            background-color: #1a0508;
+            border: 1px solid var(--sith-red);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: inset 0 0 20px rgba(255, 0, 51, 0.1);
+        }
+
+        .codigo-sith p {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin: 10px 0;
+            color: #ffcbd5;
+        }
+
+        /* Grid de Personagens */
         .grid-personagens {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-            gap: 25px;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
             .grid-personagens {
                 grid-template-columns: 1fr;
             }
         }
 
         .card {
-            background-color: #1a1a1a;
-            border: 1px solid #333;
+            background-color: var(--panel-bg);
+            border: 1px solid #2d3139;
             border-radius: 8px;
-            padding: 25px;
-            transition: transform 0.3s, border-color 0.3s;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
         }
 
         .card:hover {
+            border-color: var(--sith-red);
+            box-shadow: 0 10px 25px rgba(255, 0, 51, 0.15);
             transform: translateY(-5px);
-            border-color: #ff0000;
-            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
-        }
-
-        .card h2 {
-            color: #ff3333;
-            margin-top: 0;
-            border-bottom: 1px solid #444;
-            padding-bottom: 10px;
-            font-size: 1.8rem;
         }
 
         .card h3 {
-            color: #a0a0a0;
-            font-size: 1rem;
+            color: var(--sith-red);
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .card .titulo-alternativo {
+            color: var(--text-muted);
+            font-size: 0.9rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: -5px;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .info-tag {
+            background-color: #2d1015;
+            color: #ff8093;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
             margin-bottom: 15px;
         }
 
+        /* Seção Estrela da Morte */
+        .death-star {
+            background: linear-gradient(90deg, #15161a 0%, #1f212a 100%);
+            border-left: 5px solid var(--sith-red);
+            border-radius: 4px;
+            padding: 30px;
+        }
+
+        .dados-tecnicos {
+            background-color: rgba(0,0,0,0.3);
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 20px;
+        }
+
+        .dados-tecnicos ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dados-tecnicos li {
+            margin-bottom: 8px;
+            font-size: 0.95rem;
+        }
+
+        .dados-tecnicos strong {
+            color: var(--sith-red);
+        }
+
+        /* Rodapé */
         footer {
             text-align: center;
-            padding: 30px;
-            background-color: #0a0a0a;
-            color: #666;
+            padding: 40px 20px;
+            background-color: #050507;
+            color: var(--text-muted);
+            border-top: 1px solid #1a1a22;
             font-size: 0.9rem;
-            border-top: 1px solid #222;
-            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
+    <nav>
+        <ul>
+            <li><a href="#motivacoes">Motivações Sith</a></li>
+            <li><a href="#lideres">Grandes Líderes</a></li>
+            <li><a href="#armas">Superarmas</a></li>
+        </ul>
+    </nav>
+
     <header>
-        <h1>O Império e a Ordem Sith</h1>
-        <p>"Paz é uma mentira, só existe paixão."</p>
+        <h1>Os Arquivos Imperiais</h1>
+        <p>Registros históricos sobre a Ordem Sith, seus maiores ícones e a engenharia de dominação galáctica.</p>
     </header>
 
-    <main>
-        <section class="intro">
-            <h2>A Ascensão do Lado Sombrio</h2>
-            <p>O Império Galáctico e os Lordes Sith que o moldaram governaram a galáxia através do medo, do poder bruto e da manipulação política. Abaixo estão as figuras mais temidas e marcantes que espalharam o terror pelas estrelas.</p>
-        </section>
+    <div class="container">
 
-        <section class="grid-personagens">
+        <section id="motivacoes">
+            <h2>As Motivações e a Filosofia Sith</h2>
+            <p>Diferente dos Jedi, que buscam a paz através do desapego e da serenidade, as motivações dos Sith são alimentadas pela paixão, pela emoção crua e pelo desejo de liberdade absoluta através do poder individual. Para um Sith, a Força não é um guia místico ao qual se deve obedecer, mas sim uma ferramenta para dobrar a galáxia à sua própria vontade.</p>
+            <p>Eles acreditam que o conflito gera força e que os fracos devem ser governados por aqueles que têm a coragem de tomar o poder. O cerne de sua filosofia está imortalizado em seu mantra sagrado:</p>
             
-            <div class="card">
-                <h2>Darth Sidious</h2>
-                <h3>Imperador Palpatine</h3>
-                <p>O mestre supremo da manipulação e o arquiteto da queda da República e da Ordem Jedi. Agindo nas sombras como político e como Lorde Sith, Palpatine acumulou poder absoluto, governando o Império com punho de ferro e dominando os Raios da Força com maestria cruel.</p>
+            <div class="codigo-sith">
+                <p>"A paz é uma mentira, só existe paixão."</p>
+                <p>"Através da paixão, ganho força."</p>
+                <p>"Através da força, ganho poder."</p>
+                <p>"Através do poder, ganho vitória."</p>
+                <p>"Através da vitória, minhas correntes são quebradas."</p>
+                <p>"A Força me libertará."</p>
             </div>
-
-            <div class="card">
-                <h2>Darth Vader</h2>
-                <h3>O Escolhido Caído</h3>
-                <p>Nascido Anakin Skywalker, ele cedeu às promessas de Sidious para salvar quem amava, tornando-se o Executor do Império. Meio homem, meio máquina, Vader se transformou no símbolo máximo do terror imperial, caçando os Jedi sobreviventes com seu sabre de luz vermelho e sua presença implacável.</p>
-            </div>
-
-            <div class="card">
-                <h2>Darth Maul</h2>
-                <h3>A Arma de Dathomir</h3>
-                <p>O primeiro aprendiz conhecido de Sidious na era moderna. Com seu visual intimidador de linhas vermelhas e pretas e um sabre de luz de lâmina dupla, Maul era pura agressividade e técnica de combate. Embora descartado pelo seu mestre, ele sobreviveu movido pelo ódio e pela vingança.</p>
-            </div>
-
-            <div class="card">
-                <h2>General Grievous</h2>
-                <h3>O Flagelo dos Jedi</h3>
-                <p>Embora não fosse um Sith ou sensitivo à Força, Grievous era o temido líder militar do exército androide separatista (precursor do Império). Treinado na arte do combate de sabre de luz por Conde Dookan, este ciborgue colecionava as armas dos Jedi que derrotava, sendo capaz de lutar com até quatro sabres simultaneamente.</p>
-            </div>
-
         </section>
-    </main>
+
+        <section id="lideres">
+            <h2>Figuras de Terror e Poder</h2>
+            <div class="grid-personagens">
+
+                <div class="card">
+                    <h3>Darth Sidious</h3>
+                    <span class="titulo-alternativo">Sheev Palpatine</span>
+                    <div class="info-tag">Mestre Supremo / Imperador</div>
+                    <p><strong>Motivação:</strong> Controle absoluto e imortalidade.</p>
+                    <p>Sidious representa o ápice do plano de mil anos dos Sith para destruir a República por dentro. Usando a identidade pública do pacífico Senador (e depois Chanceler) Palpatine, ele manipulou ambos os lados das Guerras Clônicas. Como Imperador, utilizou o Lado Sombrio para tentar desvendar os segredos da vida eterna e governar a galáxia para sempre.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Darth Vader</h3>
+                    <span class="titulo-alternativo">Anakin Skywalker</span>
+                    <div class="info-tag">O Executor Imperial</div>
+                    <p><strong>Motivação:</strong> Ordem através do medo, apego e arrependimento.</p>
+                    <p>Corrompido por Palpatine com a promessa de salvar sua esposa da morte, Anakin traiu a Ordem Jedi. Consumido pela culpa e mutilado após seu duelo em Mustafar, Vader ficou preso em uma armadura de suporte de vida preta. Ele tornou-se o punho implacável do Imperador, caçando os sobreviventes Jedi e impondo a vontade imperial pelo terror físico e psicológico.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Darth Maul</h3>
+                    <span class="titulo-alternativo">O Assassino de Dathomir</span>
+                    <div class="info-tag">Ex-Aprendiz Sith / Lorde do Crime</div>
+                    <p><strong>Motivação:</strong> Vingança obsessiva e sobrevivência.</p>
+                    <p>Treinado secretamente por Sidious como uma arma viva de pura agressão, Maul revelou a existência dos Sith após séculos de isolamento. Após ser cortado ao meio por Obi-Wan Kenobi, seu ódio extremo o manteve vivo. Ele construiu pernas cibernéticas e passou décadas tentando se vingar tanto dos Jedi quanto de seu antigo mestre, que o descartou.</p>
+                </div>
+
+                <div class="card">
+                    <h3>General Grievous</h3>
+                    <span class="titulo-alternativo">Qymaen jai Sheelal</span>
+                    <div class="info-tag">Supremo Comandante Androide</div>
+                    <p><strong>Motivação:</strong> Ódio cego aos Jedi e glória militar.</p>
+                    <p>Embora não fosse um Sith (pois não conseguia usar a Força), Grievous foi peça-chave nos planos deles. Originalmente um guerreiro orgulhoso, ele teve quase todo o corpo substituído por partes cibernéticas. Treinado pelo Lorde Sith Conde Dookan, Grievous desenvolveu uma mecânica de combate letal, usando quatro sabres de luz simultaneamente para exterminar dezenas de Jedi.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="armas">
+            <h2>A Engenharia do Medo: Estrela da Morte</h2>
+            <div class="death-star">
+                <p>A <strong>Estrela da Morte</strong> (DS-1 Orbital Battle Station) foi a manifestação física da chamada "Doutrina Tarkin": a ideia de governar a galáxia através do medo do uso da força, em vez da força em si. Concebida secretamente antes mesmo das Guerras Clônicas e impulsionada por mentes brilhantes coagidas (como Galen Erso), esta estação espacial do tamanho de uma lua foi projetada para destruir planetas inteiros com um único disparo.</p>
+                <p>O segredo de seu poder destrutivo residia em um superlaser alimentado por gigantescos <strong>Cristais Kyber</strong> artificiais e naturais — os mesmos cristais raros que os Jedi usavam em seus sabres de luz, mas amplificados em escala colossal pelos Sith.</p>
+                
+                <div class="dados-tecnicos">
+                    <h3>Ficha Técnica Imperial</h3>
+                    <ul>
+                        <li><strong>Diâmetro:</strong> 120 quilômetros</li>
+                        <li><strong>Armamento Principal:</strong> Superlaser de Cristais Kyber</li>
+                        <li><strong>Tripulação:</strong> Mais de 1 milhão de militares (oficiais, stormtroopers e pilotos)</li>
+                        <li><strong>Alvo Demonstrativo Central:</strong> Planeta Alderaan (Destruído para demonstrar o poder do Império)</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </div>
 
     <footer>
-        <p>Que a Força esteja com você... ou não. © 2026</p>
+        <p>Compilado pelos Droides de Arquivo do Centro Imperial de Coruscant. Anno 2026.</p>
     </footer>
 
 </body>
