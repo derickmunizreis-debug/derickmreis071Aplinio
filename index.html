@@ -3,38 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vídeo Incorporado</title>
+    <title>O Império Sith e Seus Aliados</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            background-color: #0d0d0d;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             margin: 0;
+            padding: 0;
         }
-        .video-container {
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+
+        header {
+            background: linear-gradient(180deg, #1a0000 0%, #0d0d0d 100%);
+            border-bottom: 3px solid #ff0000;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        header h1 {
+            color: #ff0000;
+            font-size: 3rem;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            text-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+        }
+
+        header p {
+            font-style: italic;
+            color: #a0a0a0;
+            font-size: 1.2rem;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .intro {
+            background-color: #141414;
+            border-left: 5px solid #ff0000;
+            padding: 20px;
+            margin-bottom: 40px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .grid-personagens {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+        }
+
+        @media (max-width: 600px) {
+            .grid-personagens {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .card {
+            background-color: #1a1a1a;
+            border: 1px solid #333;
             border-radius: 8px;
-            overflow: hidden;
+            padding: 25px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #ff0000;
+            box-shadow: 0 5px 15px rgba(255, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: #ff3333;
+            margin-top: 0;
+            border-bottom: 1px solid #444;
+            padding-bottom: 10px;
+            font-size: 1.8rem;
+        }
+
+        .card h3 {
+            color: #a0a0a0;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: -5px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #0a0a0a;
+            color: #666;
+            font-size: 0.9rem;
+            border-top: 1px solid #222;
+            margin-top: 50px;
         }
     </style>
 </head>
 <body>
 
-    <div class="video-container">
-        <iframe 
-            width="560" 
-            height="315" 
-            src="https://www.youtube.com/embed/L4SdydVjaP4?si=WI2sWIBFNx5QLK8V" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-        </iframe>
-    </div>
+    <header>
+        <h1>O Império e a Ordem Sith</h1>
+        <p>"Paz é uma mentira, só existe paixão."</p>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>A Ascensão do Lado Sombrio</h2>
+            <p>O Império Galáctico e os Lordes Sith que o moldaram governaram a galáxia através do medo, do poder bruto e da manipulação política. Abaixo estão as figuras mais temidas e marcantes que espalharam o terror pelas estrelas.</p>
+        </section>
+
+        <section class="grid-personagens">
+            
+            <div class="card">
+                <h2>Darth Sidious</h2>
+                <h3>Imperador Palpatine</h3>
+                <p>O mestre supremo da manipulação e o arquiteto da queda da República e da Ordem Jedi. Agindo nas sombras como político e como Lorde Sith, Palpatine acumulou poder absoluto, governando o Império com punho de ferro e dominando os Raios da Força com maestria cruel.</p>
+            </div>
+
+            <div class="card">
+                <h2>Darth Vader</h2>
+                <h3>O Escolhido Caído</h3>
+                <p>Nascido Anakin Skywalker, ele cedeu às promessas de Sidious para salvar quem amava, tornando-se o Executor do Império. Meio homem, meio máquina, Vader se transformou no símbolo máximo do terror imperial, caçando os Jedi sobreviventes com seu sabre de luz vermelho e sua presença implacável.</p>
+            </div>
+
+            <div class="card">
+                <h2>Darth Maul</h2>
+                <h3>A Arma de Dathomir</h3>
+                <p>O primeiro aprendiz conhecido de Sidious na era moderna. Com seu visual intimidador de linhas vermelhas e pretas e um sabre de luz de lâmina dupla, Maul era pura agressividade e técnica de combate. Embora descartado pelo seu mestre, ele sobreviveu movido pelo ódio e pela vingança.</p>
+            </div>
+
+            <div class="card">
+                <h2>General Grievous</h2>
+                <h3>O Flagelo dos Jedi</h3>
+                <p>Embora não fosse um Sith ou sensitivo à Força, Grievous era o temido líder militar do exército androide separatista (precursor do Império). Treinado na arte do combate de sabre de luz por Conde Dookan, este ciborgue colecionava as armas dos Jedi que derrotava, sendo capaz de lutar com até quatro sabres simultaneamente.</p>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>Que a Força esteja com você... ou não. © 2026</p>
+    </footer>
 
 </body>
 </html>
