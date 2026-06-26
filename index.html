@@ -94,3 +94,291 @@
             margin: 40px auto;
             padding: 0 20px;
         }
+
+        /* Seções Gerais */
+        section {
+            margin-bottom: 80px;
+            scroll-margin-top: 100px;
+        }
+
+        h2 {
+            color: var(--sith-red);
+            font-size: 2.4rem;
+            border-bottom: 2px solid var(--imperial-gray);
+            padding-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+        }
+
+        /* Bloco de Código Sith */
+        .codigo-sith {
+            background-color: rgba(26, 5, 8, 0.85);
+            border: 1px solid var(--sith-red);
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: inset 0 0 20px rgba(255, 0, 51, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .codigo-sith p {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin: 10px 0;
+            color: #ffcbd5;
+        }
+
+        /* Grid de Conteúdo Dinâmico */
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--panel-bg);
+            border: 1px solid #2d3139;
+            border-radius: 8px;
+            padding: 30px;
+            position: relative;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .card:hover {
+            border-color: var(--sith-red);
+            box-shadow: 0 10px 25px rgba(255, 0, 51, 0.25);
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--sith-red);
+            font-size: 1.8rem;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+
+        .card .subtitulo {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .info-tag {
+            background-color: #2d1015;
+            color: #ff8093;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        /* Destaque Estrela da Morte */
+        .death-star {
+            background: linear-gradient(90deg, rgba(15, 16, 20, 0.95) 30%, rgba(31, 33, 42, 0.7) 100%), 
+                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=80') center/cover;
+            border-left: 5px solid var(--sith-red);
+            border-radius: 8px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            margin-bottom: 40px;
+        }
+
+        .dados-tecnicos {
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 25px;
+            border: 1px solid #333;
+        }
+
+        .dados-tecnicos ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .dados-tecnicos li {
+            margin-bottom: 10px;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #1c1f26;
+            padding-bottom: 5px;
+        }
+
+        .dados-tecnicos strong {
+            color: var(--sith-red);
+        }
+
+        /* Rodapé */
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            background-color: #050507;
+            color: var(--text-muted);
+            border-top: 1px solid #1a1a22;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <li><a href="#motivacoes">Filosofia Sith</a></li>
+            <li><a href="#lideres">Os Líderes</a></li>
+            <li><a href="#superarmas">Arsenal & Estrela da Morte</a></li>
+            <li><a href="#infantaria">Corpo de Stormtroopers</a></li>
+        </ul>
+    </nav>
+
+    <header>
+        <h1>Compêndio Imperial Supremo</h1>
+        <p>Acesso irrestrito aos registros de doutrina ideológica, comando operacional, armamentos de destruição planetária e forças de infantaria tática do Império Galáctico.</p>
+    </header>
+
+    <div class="container">
+
+        <section id="motivacoes">
+            <h2>1. Doutrina e Motivações da Ordem Sith</h2>
+            <p>O Império Galáctico não surgiu apenas por ambição militar; ele foi a culminação política da filosofia Sith. Enquanto a Ordem Jedi pregava a passividade, a supressão de sentimentos e a submissão ao destino, os Sith viam o universo como uma arena de combate eterno onde apenas os mais fortes merecem governar.</p>
+            <p>Para um Sith, o poder não é um fardo, mas o objetivo supremo. O medo, a raiva, o ódio e a ambição são vistos como combustíveis legítimos que libertam o indivíduo de amarras morais artificiais. Através do controle do Império, os Sith buscavam impor uma ordem absoluta na galáxia, erradicando o caos da democracia corrupta republicana através da imposição do medo e da força inabalável.</p>
+            
+            <div class="codigo-sith">
+                <p>"A paz é uma mentira, só existe paixão."</p>
+                <p>"Através da paixão, ganho força."</p>
+                <p>"Através da força, ganho poder."</p>
+                <p>"Através do poder, ganho vitória."</p>
+                <p>"Através da vitória, minhas correntes são quebradas."</p>
+                <p>"A Força me libertará."</p>
+            </div>
+        </section>
+
+        <section id="lideres">
+            <h2>2. Figuras Centrais do Comando</h2>
+            <div class="grid-layout">
+
+                <div class="card">
+                    <h3>Darth Sidious</h3>
+                    <span class="subtitulo">Sheev Palpatine</span>
+                    <div class="info-tag">Mestre Sith / Imperador</div>
+                    <p>O mestre estrategista que operou em segredo absoluto por décadas. Destruiu a Ordem Jedi usando suas próprias leis e transformou a República no primeiro Império Galáctico. Governou com base em manipulação psicológica, rituais ocultos do Lado Sombrio e controle absoluto da máquina política.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Darth Vader</h3>
+                    <span class="subtitulo">O Executor da Vontade Imperial</span>
+                    <div class="info-tag">Lorde Sith Aprendiz</div>
+                    <p>A personificação física do Terror Imperial. Antigo herói da República, transformado em ciborgue após sua queda catastrófica. Equipado com uma armadura blindada e um sabre de luz carmesim, Vader operava fora da cadeia de comando militar padrão, respondendo diretamente ao Imperador para exterminar insurreições.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Darth Maul</h3>
+                    <span class="subtitulo">O Assassino de Dathomir</span>
+                    <div class="info-tag">Ex-Lorde Sith / Guerreiro Sombrio</div>
+                    <p>Treinado para ser a arma definitiva de infiltração e eliminação física. Mestre no estilo de combate acrobático e pioneiro no uso do sabre de luz de lâmina dupla. Embora tenha sido deixado para trás pelo Império após sua aparente morte, seu legado de ódio moldou o início dos conflitos modernos.</p>
+                </div>
+
+                <div class="card">
+                    <h3>General Grievous</h3>
+                    <span class="subtitulo">Comandante Supremo dos Exércitos</span>
+                    <div class="info-tag">Aliado Cibernético</div>
+                    <p>Um brilhante estrategista militar kaleesh reconstituído com um chassi inteiramente metálico. Apesar de não possuir conexão com a Força, seu corpo robótico permitia reflexos sobre-humanos, tornando-o capaz de empunhar múltiplos sabres de luz simultaneamente para caçar e colecionar insígnias de Jedi caídos.</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="superarmas">
+            <h2>3. Tecnologias de Destruição e Arsenal</h2>
+            
+            <div class="death-star">
+                <h3>A Estrela da Morte (DS-1)</h3>
+                <p>A maior expressão da "Doutrina Tarkin". Esta estação espacial de escala planetária eliminou a necessidade do Senado Imperial, permitindo ao Império manter sistemas estelares inteiros sob controle absoluto através da ameaça de aniquilação total. O disparo concentrado de seu superlaser obliterava planetas em segundos.</p>
+                
+                <div class="dados-tecnicos">
+                    <ul>
+                        <li><strong>Propulsão & Energia:</strong> Hipergerador de fusão hipermatéria alimentado por Cristais Kyber amplificados.</li>
+                        <li><strong>Capacidade Bélica:</strong> Destruição planetária instantânea; milhares de baterias de turbolaser e canhões de íons para defesa de superfície.</li>
+                        <li><strong>Símbolo de Destruição:</strong> Responsável pela pulverização do planeta Alderaan.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid-layout">
+                <div class="card">
+                    <h3>Destroyers Estelares Classe Imperial</h3>
+                    <span class="subtitulo">Predomínio Naval</span>
+                    <p>Com 1.600 metros de comprimento e formato de cunha intimidante, estes cruzadores de batalha eram capitânia da Frota Imperial. A mera presença de um único Destroyer em órbita era suficiente para pacificar sistemas rebeldes inteiros sem disparar um único tiro.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Super Destroyer Estelar (Classe Executor)</h3>
+                    <span class="subtitulo">A Fortaleza de Vader</span>
+                    <p>Uma monstruosidade com 19 quilômetros de extensão. Servia como centro de comando móvel para Darth Vader. Carregava milhares de caças TIE, exércitos inteiros de Stormtroopers e possuía poder de fogo equivalente a frotas planetárias inteiras unidas.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Caminhadores AT-AT</h3>
+                    <span class="subtitulo">Artilharia Blindada de Superfície</span>
+                    <p>Veículos de transporte armado de infantaria quadrúpedes com mais de 20 metros de altura. Praticamente imunes a disparos de blasters convencionais, eram usados para ataques terrestres psicológicos e destruição de fortificações pesadas (como visto na Batalha de Hoth).</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="infantaria">
+            <h2>4. Divisões Especializadas de Infantaria</h2>
+            <p>A infantaria imperial foi reestruturada para garantir eficiência máxima em qualquer ambiente ecológico ou zona de guerra na galáxia conhecida. Abaixo estão listadas as principais variantes táticas dos soldados da Nova Ordem:</p>
+            
+            <div class="grid-layout">
+                <div class="card">
+                    <h3>Stormtroopers Convencionais</h3>
+                    <span class="subtitulo">A Linha de Frente</span>
+                    <p>Soldados de choque altamente disciplinados envoltos em uma armadura plastoide branca de 18 peças sobre uma subveste preta. Protege contra estilhaços, ambientes hostis e dispersa o impacto de tiros blaster de raspão. Equipados com o rifle blaster padrão BlasTech E-11.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Scout Troopers</h3>
+                    <span class="subtitulo">Batedores e Atiradores de Elite</span>
+                    <p>Utilizam armaduras consideravelmente mais leves para garantir agilidade extrema. Equipados com capacetes com sensores ópticos avançados e macrobinóculos para mapeamento de terreno. Especializados em pilotar Speed Bikes e realizar missões de reconhecimento tático avançado.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Snowtroopers</h3>
+                    <span class="subtitulo">Guerra Ártica</span>
+                    <p>Unidades modificadas para sobrevivência prolongada sob temperaturas congelantes e ambientes subzero. Seus capacetes possuem capuzes de tecido polar respirável isolante e suas armaduras contam com sistemas de aquecimento interno independentes conectados a baterias dorsais.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Shoretroopers</h3>
+                    <span class="subtitulo">Defesa Costeira e Tropical</span>
+                    <p>Soldados especializados de elite destacados para bases secretas localizadas em planetas tropicais e ilhas (como o complexo militar do planeta Scarif). Suas armaduras possuem coloração areia fosca para camuflagem e materiais leves resistentes à corrosão por água salgada.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Death Troopers</h3>
+                    <span class="subtitulo">Guarda de Elite de Inteligência</span>
+                    <p>Uma variante ultrassecreta e elite da Inteligência Imperial. Envoltos em armaduras pretas reflexivas com revestimento de polímeros raros. Passavam por aprimoramentos físicos confidenciais e eram destacados exclusivamente para a proteção de oficiais de altíssimo escalão (como o Diretor Krennic) e operações secretas de extermínio.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Purge Troopers</h3>
+                    <span class="subtitulo">Caçadores de Jedi</span>
+                    <p>Unidades táticas especiais que operavam diretamente sob o comando da Inquisição Imperial. Treinados especificamente para rastrear, encurralar e auxiliar no extermínio de remanescentes da Ordem Jedi sobreviventes à Ordem 66. Equipados com armamento elétrico corpo a corpo pesado.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <p>Dados Criptografados e Compilados pelo Gabinete de Segurança da Informação Imperial - Coruscant. Anno 2026.</p>
+    </footer>
+
+</body>
+</html>
